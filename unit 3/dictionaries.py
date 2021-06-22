@@ -90,6 +90,10 @@ def fib_memoization(n, d):
     
 d = {1:1, 2:2}
 
-#changin the dict for git
-#adding more changes where my codes at
-#make some new text to be added to file
+<<<<<<< HEAD
+
+
+=======
+#making merge conflicts
+#mskinh more merge conflicts
+>>>>>>> practice
