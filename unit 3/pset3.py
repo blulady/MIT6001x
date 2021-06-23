@@ -55,7 +55,7 @@ def getGuessedWord(secretWord, lettersGuessed):
         if secretWord[letter] in lettersGuessed:
             guessedWord += secretWord[letter]
         else:
-            guessedWord += '_'
+            guessedWord += '_ '
     return guessedWord
     
             
@@ -67,4 +67,23 @@ def getGuessedWord(secretWord, lettersGuessed):
 secretWord = 'apple' 
 lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
 print(getGuessedWord(secretWord, lettersGuessed))
-#'_ pp_ e'    
+#'_ pp_ e'  
+
+import string
+
+def getAvailableLetters(lettersGuessed):
+    
+    '''
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters that represents what letters have not
+      yet been guessed.  '''
+    alpha = string.ascii_lowercase
+    alphaNoLettersGuessed = ''
+    for letter in alpha:
+        if letter not in lettersGuessed:
+            alphaNoLettersGuessed += letter
+    return alphaNoLettersGuessed
+    
+      
+lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+print(getAvailableLetters(lettersGuessed))
