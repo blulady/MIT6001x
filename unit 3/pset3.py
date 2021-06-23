@@ -45,11 +45,19 @@ def getGuessedWord(secretWord, lettersGuessed):
     #         guessedWord[letter*2] 
     
     guessedWord = ''
-    for letter in secretWord:
-        guessedWord += '_ '
+    # for letter in secretWord:
+    #     guessedWord += '_'
+    # for letter in range(len(secretWord)):
+    #     if secretWord[letter] in lettersGuessed:
+    #         #guessedWord[letter] = secretWord[letter]
+    #         guessedWord += secretWord[letter]
     for letter in range(len(secretWord)):
         if secretWord[letter] in lettersGuessed:
-            guessedWord[letter*2] 
+            guessedWord += secretWord[letter]
+        else:
+            guessedWord += '_'
+    return guessedWord
+    
             
             
 

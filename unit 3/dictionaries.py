@@ -90,10 +90,4 @@ def fib_memoization(n, d):
     
 d = {1:1, 2:2}
 
-<<<<<<< HEAD
 
-
-=======
-#making merge conflicts
-#mskinh more merge conflicts
->>>>>>> practice
