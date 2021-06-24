@@ -29,18 +29,33 @@ epsilon = .01
 # print(round(monthlyPayment,2))
 # print(newBalance)
 
-
-
-
-monthlyPayment = (low + high)/2
-
-while (monthlyPayment * 12) - newBalance > epsilon:
+while newBalance > 0 < .02:
     monthlyPayment = (low + high)/2
-    high = monthlyPayment
-    monthlyPayment = (low + high)/2
+    if monthlyPayment * 12 > newBalance:
+        high = monthlyPayment
+    if monthlyPayment * 12 < newBalance:
+        low = monthlyPayment
+#    monthlyPayment = (low/high)/2
     for i in range(12):
-        monthlyInterestRate = annualInterestRate/12
+        montlyInterestRate = annualInterestRate/12
         monthlyUnpaidBalance = newBalance - monthlyPayment
         newBalance = monthlyUnpaidBalance + (monthlyUnpaidBalance * montlyInterestRate)
+        print(newBalance)
+print(round(monthlyPayment,2))
+print(newBalance)
+
+
+
+
+# monthlyPayment = (low + high)/2
+
+# while (monthlyPayment * 12) - newBalance > epsilon:
+#     monthlyPayment = (low + high)/2
+#     high = monthlyPayment
+#     monthlyPayment = (low + high)/2
+#     for i in range(12):
+#         monthlyInterestRate = annualInterestRate/12
+#         monthlyUnpaidBalance = newBalance - monthlyPayment
+#         newBalance = monthlyUnpaidBalance + (monthlyUnpaidBalance * montlyInterestRate)
         
-print(round(monthlyPayment, 2))
+# print(round(monthlyPayment, 2))

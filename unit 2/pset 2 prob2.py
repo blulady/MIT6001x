@@ -18,6 +18,23 @@ while newBalance > 0:
         montlyInterestRate = annualInterestRate/12
         monthlyUnpaidBalance = newBalance - monthlyPayment
         newBalance = monthlyUnpaidBalance + (monthlyUnpaidBalance * montlyInterestRate)
+
+# #answer for problem 3
+# annualInterestRate = 0.2
+# #montlyInterestRate = annualInterestRate/12
+# balance = 3926
+# monthlyPayment = 200
+# newBalance = balance
+
+# while newBalance > 0 < .2:
+#     newBalance = balance
+#     monthlyPayment += .1
+#     for i in range(12):
+#         montlyInterestRate = annualInterestRate/12
+#         monthlyUnpaidBalance = newBalance - monthlyPayment
+#         newBalance = monthlyUnpaidBalance + (monthlyUnpaidBalance * montlyInterestRate)
         
-print(monthlyPayment)
+
+
+
     
