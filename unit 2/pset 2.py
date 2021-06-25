@@ -41,5 +41,6 @@ def remainingBalance(balance, annualInterestRate, monthlyPaymentRate):
 #     balance = monthlyUnpaidBalance + (monthlyUnpaidBalance * monthlyInterestRate)
 # print(balance)
     
+
     
     
