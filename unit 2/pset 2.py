@@ -9,17 +9,18 @@ Created on Fri Jun 11 16:24:33 2021
 
 
 
-def remainingBalance(balance, annualInterestRate, monthlyPaymentRate):
-    for i in range(12):
-        monthlyInterestRate = annualInterestRate/12.0
-        minimumMonthlyPayment = monthlyPaymentRate * balance
-        monthlyUnpaidBalance = balance - minimumMonthlyPayment
-        balance = monthlyUnpaidBalance + (monthlyUnpaidBalance * monthlyInterestRate)
-        print(round(balance, 2))
-    return(balance)
+# def remainingBalance(balance, annualInterestRate, monthlyPaymentRate):
+#     for i in range(12):
+#         monthlyInterestRate = annualInterestRate/12.0
+#         minimumMonthlyPayment = monthlyPaymentRate * balance
+#         monthlyUnpaidBalance = balance - minimumMonthlyPayment
+#         balance = monthlyUnpaidBalance + (monthlyUnpaidBalance * monthlyInterestRate)
+#         print(round(balance, 2))
+#     return(balance)
 
 
 #grader didn't want it in a function
+# annualInterestRate = 0
 
 
 # for i in range(12):

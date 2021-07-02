@@ -24,10 +24,10 @@ def isWordGuessed(secretWord, lettersGuessed):
     return len(guess) == len(secretWord)
     
     
-secretWord = 'apple'
-lettersGuessed = ['a', 'p', 'p', 'l', 'e']
-#lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-print(isWordGuessed(secretWord, lettersGuessed))
+# secretWord = 'apple'
+# lettersGuessed = ['a', 'p', 'p', 'l', 'e']
+# #lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+# print(isWordGuessed(secretWord, lettersGuessed))
 
 
 def getGuessedWord(secretWord, lettersGuessed):
@@ -64,10 +64,10 @@ def getGuessedWord(secretWord, lettersGuessed):
     
     
     
-secretWord = 'apple' 
-lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-print(getGuessedWord(secretWord, lettersGuessed))
-#'_ pp_ e'  
+# secretWord = 'apple' 
+# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+# print(getGuessedWord(secretWord, lettersGuessed))
+# #'_ pp_ e'  
 
 import string
 
@@ -85,8 +85,8 @@ def getAvailableLetters(lettersGuessed):
     return alphaNoLettersGuessed
     
       
-lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-print(getAvailableLetters(lettersGuessed))
+# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+# print(getAvailableLetters(lettersGuessed))
 
 def hangman(secretWord):
     '''
@@ -108,6 +108,32 @@ def hangman(secretWord):
 
     Follows the other limitations detailed in the problem write-up.
     '''
-    guesses = 8
-    while guesses != 0:
+    
+    secretWordLength = len(secretWord)
+    print('Welcome to the game Hangman!\nI am thinking of a word that is ' + str(secretWordLength) + ' letters long\n-------------')
+    guessesLeft = 8
+    lettersGuessed = []
+    
+    while guessesLeft != 0:
+        newGuess = input("You have "+ str(guessesLeft) +" guesses left\nAvailable Letters: " + getAvailableLetters(lettersGuessed)+ "\nPlease guess a letter: " )
+        newGuess = newGuess.lower()
+        if newGuess in lettersGuessed:
+            print("Oops! You've already guessed that letter: " + getGuessedWord(secretWord, lettersGuessed))
+            print("------------")
+        elif newGuess in secretWord:
+            lettersGuessed.append(newGuess)
+            print("Good guess: " + getGuessedWord(secretWord, lettersGuessed ))
+            print("------------")
+        #elif newGuess == lettersGuessed[-1]:
+            #print('Congratulations, you won!')
+            #break
+        else:
+            guessesLeft -=1
+            lettersGuessed.append(newGuess)
+            print("Oops! That letter is not in my word: " + getGuessedWord(secretWord, lettersGuessed), "\n-------------")
+
+    if guessesLeft == 0:
+        print('Sorry, you ran out of guesses. The word was ' + secretWord +'.')
+    elif guessesLeft > 0:
+        print('Congratulations, you won!')
         
